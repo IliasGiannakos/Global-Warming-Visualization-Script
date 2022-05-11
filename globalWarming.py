@@ -78,3 +78,18 @@ for i in range(len(yearly_mean_temp)):
     ax.cla()
     cb.remove()
 
+#Average yearly temprature variation graph
+plt.figure(figsize=(18,7))
+plt.grid()
+plt.title('Average global temprature variation over time')
+plt.xlabel('Year')
+plt.ylabel('Average temprature variation (Kelvin degrees)')
+plt.xlim(1880,2022)
+plt.xticks(np.arange(1880, 2022+1,4))
+plt.xticks(rotation = 45)
+plt.plot(range(1880,2022),yearly_mean_temp, label = 'Temprature variation')
+plt.plot(range(1880,2019),moving_avg, 'r', linewidth=3, label = 'Moving average')
+plt.legend(loc="upper left")
+#Remove the # from the row below and specify a path if the Temprature variation graph needs to be saved
+#plt.savefig("Specify the path to the save folder here"+"/GlobalWarmingPlot.jpg")
+plt.show()
